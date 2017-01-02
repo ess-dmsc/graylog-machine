@@ -1,8 +1,8 @@
 # DMSC Graylog machine
-The vagrant file contained in this repository is to be used as a test service for collecting log messages produced by applications developed and used at the ESS DMSC. When the machine is up and running, port ???? on localhost will accept [GELF](http://docs.graylog.org/en/2.1/pages/gelf.html)-type log messages. The following libraries can be added to your application to add Graylog capability:
+The vagrant file contained in this repository is to be used as a test service for collecting log messages produced by applications developed and used at the ESS DMSC. When the machine is up and running, port 12201 on localhost will accept [GELF](http://docs.graylog.org/en/2.1/pages/gelf.html)-type log messages. The following libraries can be added to your application to add Graylog capability:
 
- * [PyToGraylog]()
- * [CppLogging]()
+ * [GraylogHandler](https://bitbucket.org/europeanspallationsource/grayloghandler) (A Python project.)
+ * [dm-graylog-logger](https://bitbucket.org/europeanspallationsource/dm-graylog-logger) (A C++ project.)
 
 Documentation on the usage of those libraries can be found at their respective repositories.
 
