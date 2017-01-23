@@ -20,12 +20,15 @@ Vagrant.configure(2)  do |config|
     dpkg -i graylog_latest.deb
     rm graylog_latest.deb
     graylog-ctl set-external-ip http://127.0.0.1:8080/api
+    graylog-ctl disable-internal-logging
     graylog-ctl reconfigure
-    echo 'Configuring new input to Graylog.'
+    echo 'Configuring new Graylog inputs.'
     /opt/graylog/mongodb/bin/mongo graylog /home/vagrant/gl_conf.js
-    rm /home/vagrant/gl_conf.js
+    graylog-ctl reconfigure
     graylog-ctl restart
+    rm /home/vagrant/gl_conf.js
 SCRIPT
 
   config.vm.provision "shell", inline: $script
 end
+#rm /home/vagrant/gl_conf.js
